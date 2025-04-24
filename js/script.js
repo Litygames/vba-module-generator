@@ -107,7 +107,7 @@ async function copyToClipboard() {
   copyBtn.disabled = true;
   try {
     await navigator.clipboard.writeText(outputEl.value);
-    copyStatus.textContent = "¡Código copiado!";
+    copyStatus.textContent = "Code copied!";
     setTimeout(() => copyStatus.textContent = "", 1000);
   } catch (e) {
     console.error(e);
