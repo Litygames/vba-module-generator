@@ -1,0 +1,85 @@
+<!--
+  Copyright (c) 2025 Litygames
+  Licensed under the GNU General Public License v3.0
+  https://www.gnu.org/licenses/gpl-3.0.txt
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Litygames">
+  <meta name="description" content="Online tool to generate VBA module">
+  <meta name="keywords" content="litygames, powerpoint, ppt, vba, visual basic for applications, module, bas, macros">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'; style-src 'self';">
+
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>VBA Module Generator</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <noscript>
+    <div style="color: red; font-weight: bold;">
+      Este sitio requiere JavaScript para funcionar correctamente. Por favor, actívalo en tu navegador.
+    </div>
+  </noscript>
+
+  <header class="site-header">
+    <h1>VBA Module Generator - By <a href="https://linktr.ee/Litygames" target="_blank" rel="noopener noreferrer" title="About Litygames">Litygames</a></h1>
+  </header>
+
+  <main class="site-content">
+  <!-- Sección de Explicación -->
+  <section class="project-overview">
+    <p><strong>VBA Module Generator</strong> is an online tool that takes the VBA code you enter and generates a macro that automatically inserts a module with your code.</p>
+    <p>
+      For more information, visit the
+      <a href="https://github.com/Litygames/vba-module-generator" target="_blank" rel="noopener noreferrer" title="View the GitHub repository">GitHub repository</a>.
+      You can also report any
+      <a href="https://github.com/Litygames/vba-module-generator/issues" target="_blank" rel="noopener noreferrer" title="Report issues on GitHub">issues</a> here.
+      If you found this tool helpful, you can support my work on
+      <span class="buy-me-coffee">
+        <a href="https://www.buymeacoffee.com/litygames" target="_blank">
+          <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me a Coffee" />
+        </a>
+      </span>  
+    </p> 
+  </section>
+   <!-- Sección de opciones -->
+  <section class="options">
+    <h3>Options</h3>
+    <label>
+      <input type="checkbox" id="OnlyInsertLines" onchange="handleOptionChange()"> Insert Lines Only
+    </label><br>
+    <label>
+      <input type="checkbox" id="IgnoreSubFunctionBlocks" onchange="handleOptionChange()"> Ignore Sub/Function blocks
+    </label>
+  </section>
+
+  <!-- Sección de Generar Macro -->
+  <section class="input-output-container">
+    <div class="input-form">
+      <h2>Enter code for the new module:</h2>
+       <textarea id="vbaCodeInput" placeholder="Paste your VBA code here..."></textarea>
+        <div class="btn" id="generateBtn">Generate Macro</div>
+    </div>
+    <div class="generated-code">
+      <h2>Generated VBA macro code:</h2>
+       <textarea id="generatedCode" readonly></textarea>
+        <div class="btn" id="copyButton">Copy Code</div>
+        <span id="copyStatus" aria-live="polite"></span>
+    </div>
+  </section>
+  </main>
+
+<!-- SPDX-License-Identifier: GPL-3.0-only -->
+<footer class="site-footer">
+  <p>© 2025 Litygames - Licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.txt" target="_blank" rel="noopener noreferrer">GNU GPL v3.0</a></p>
+</footer>
+
+</body>
+</html>

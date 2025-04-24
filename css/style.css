@@ -1,0 +1,232 @@
+/*
+  Copyright (c) 2025 Litygames
+  Licensed under the GNU General Public License v3.0
+  https://www.gnu.org/licenses/gpl-3.0.txt
+*/
+
+/* =======================================
+   VARIABLES
+======================================= */
+:root {
+    /* Colores */
+    --background-color: #253442;
+    --color-primary:    #ecf0f1;
+    --color-accent:     #27a9ff;
+    --background-box:   #1E2729;
+
+    --grid-line-color:  #2c3e50;
+
+    /* Tipografía */
+    --font-family-sans: 'Helvetica Neue', Arial, sans-serif;
+    --font-size-base:   16px;
+    --font-size-textarea:   14px;
+
+    /* Espaciado */
+    --spacing-unit:     1rem;
+
+    /* Bordes Redondos */
+    --border-radius: 6px;
+}
+
+/* =======================================
+   RESET & BASE STYLES
+======================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family-sans);
+    background-color: var(--background-color);
+    color: var(--color-primary);
+    
+    background-image: 
+    linear-gradient(0deg, var(--grid-line-color) 3px, transparent 2px),
+    linear-gradient(90deg, var(--grid-line-color) 3px, transparent 2px);
+    background-size: 5px 5px; 
+    background-repeat: repeat; 
+}
+
+/* =======================================
+   TYPOGRAPHY
+======================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+h2{
+    padding: var(--spacing-unit) 0;
+}
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+a:hover {
+    transform: translateY(-0.2rem);
+}
+
+/* =======================================
+   LAYOUT
+======================================= */
+.site-header,
+.site-footer {
+    padding: var(--spacing-unit) 0;
+    text-align: center;
+    background-color: var(--background-box);
+    color: var(--color-primary);
+    margin-top: auto; 
+}
+
+.site-content {
+    padding: var(--spacing-unit);
+    max-width: 100%;
+    width: 100%;
+    flex: 1;
+    min-height: 100%; 
+}
+
+/* =======================================
+   COMPONENTS
+======================================= */
+.project-overview {
+  padding: var(--spacing-unit);
+  border-radius:  var(--border-radius);
+  background-color: var(--background-box);
+  margin-bottom: var(--spacing-unit);
+}
+
+.project-overview a {
+  display: inline-block;
+}
+
+.project-overview .buy-me-coffee {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.project-overview .buy-me-coffee img {
+  height: 80%;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* =======================================
+   SECTIONS STYLES
+======================================= */
+.input-output-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten cuando el espacio es pequeño */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: var(--spacing-unit);
+    padding: var(--spacing-unit);
+    width: 100%;
+}
+
+  /* Columnas izquierda y derecha */
+  .input-form,
+  .generated-code {
+      width: 100%; /* Asegura que los elementos ocupen el 100% del ancho */
+      max-width: 48%; /* Limita el ancho máximo para pantallas grandes */
+      box-sizing: border-box;
+  }
+  
+  /* Estilo para áreas de texto */
+  textarea {
+    font-family: 'Courier New', monospace;
+    font-size: var(--font-size-textarea);
+    width: 100%;
+    padding: 10px;
+    background-color: var(--background-box);
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    min-height: 250px;
+    resize: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+  }
+  
+  /* Botón personalizado */
+  .btn {
+    display: inline-block; /* Para que se ajusten al contenido */
+    margin-top: 5px;
+    padding: 10px 24px;
+    background-color: var(--background-box);
+    color: var(--color-primary);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    user-select: none;
+  }
+  
+  /* Hover para botón */
+  .btn:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0px 5px 0px var(--color-accent);
+    color: var(--color-accent);
+  }
+  
+  /* Texto de estado */
+  #copyStatus {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+/* =======================================
+   OPTIONS STYLES
+======================================= */
+.options {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-unit);
+    background-color: var(--background-box);
+    border-radius: var(--border-radius);
+    gap: var(--spacing-unit);
+    flex-wrap: wrap;
+    width: 40%;
+    margin: 0 auto; /* Asegura que el contenedor se centre dentro de su contenedor principal */
+  }
+  
+  
+.options h3 {
+  font-size: 1.5rem;
+  text-align: center; /* Centra el título */
+  width: 100%; /* Asegura que el título ocupe todo el ancho */
+}
+
+.options input[type="checkbox"] {
+    vertical-align: middle;  /* Ajusta la línea base del checkbox */
+    margin-top: -1px;
+  }
+
+  .options label, .options input{
+    cursor: pointer;
+  } 
