@@ -1,6 +1,6 @@
 # What is `VBA Module Generator`?
 
-Try it online: litygames.github.io/vba-module-generator
+Try it online: [vba-module-generator](https://litygames.github.io/vba-module-generator)
 
 `VBA Module Generator` is an online tool that takes your `VBA code` and generates a macro to automatically insert it into a new module.
 
