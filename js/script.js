@@ -6,7 +6,7 @@
 
 // #BOTON GENERAR MACRO#
 // Configuración
-const MAX_INPUT_LENGTH = 10000;
+const MAX_INPUT_LENGTH = 100000;
 const functionStartRegex = /^(?:private\s+)?(?:sub|function)/i;
 
 const generateBtn = document.getElementById('generateBtn');
